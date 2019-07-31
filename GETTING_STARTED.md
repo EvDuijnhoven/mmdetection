@@ -106,6 +106,15 @@ According to the [Linear Scaling Rule](https://arxiv.org/abs/1706.02677), you ne
 python tools/train.py ${CONFIG_FILE}
 ```
 
+#### In docker
+```bash
+docker run \
+    -v `pwd`/work_dirs/:/workspace/work_dirs/ \
+    -v `pwd`/configs/:/workspace/configs/ \
+    mmdetection \
+    bash -c "PYTHONPATH=. python3 tools/train.py path/to/config"
+```
+
 If you want to specify the working directory in the command, you can add an argument `--work_dir ${YOUR_WORK_DIR}`.
 
 ### Train with multiple GPUs
