@@ -1,9 +1,9 @@
 .PHONY: mmdetection
 
-mmdetection: requirements.txt docker/Dockerfile
+mmdetection: requirements.txt docker/DockerfilePaperspace
 	docker build \
-		-t mmdetection:latest . \
-		-f docker/Dockerfile
+		-t mmdetection:V100 . \
+		-f docker/DockerfilePaperspace	
 
 clean:
 	rm -rf build/

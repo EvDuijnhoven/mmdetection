@@ -1,0 +1,8 @@
+FROM intradorerwin/mmdetection
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 PYTHON_VERSION=3.6
+WORKDIR /workspace
+
+COPY . ./
+
+RUN python3 setup.py develop
+RUN mkdir /.cache && chmod -R a+rw /.cache/
